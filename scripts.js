@@ -74,8 +74,8 @@ function handleClick() {
     }
 }
 function touchClick(e) {
-    const touch = e.changedTouches?.[0];
-    if (touch) {
+    if (e.changedTouches) {
+        const touch = e.changedTouches[0];
         const target = document.elementFromPoint(touch.clientX, touch.clientY).parentElement;
         if (target !== touchTarget) {
             touchTarget = null;
